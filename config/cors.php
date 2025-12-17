@@ -1,37 +1,16 @@
 <?php
-
 return [
-    'paths' => ['api/*', 'sanctum/csrf-cookie', 'login', 'logout', 'register', 'forgot-password'],
-    
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
     'allowed_methods' => ['*'],
-    
-    'allowed_origins' => array_filter([
+    'allowed_origins' => [
         env('FRONTEND_URL', 'https://gamestoredz.vercel.app'),
-        env('APP_URL'),
+        env('APP_URL', 'http://localhost'),
         'http://localhost:5173',
-        'http://localhost:3000',
-        'https://*.vercel.app',
-        'https://*.railway.app',
-    ]),
-    
+        'http://localhost:3000'
+    ],
     'allowed_origins_patterns' => [],
-    
-    'allowed_headers' => [
-        'Accept',
-        'Authorization',
-        'Content-Type',
-        'X-Requested-With',
-        'X-CSRF-TOKEN',
-        'X-XSRF-TOKEN',
-    ],
-    
-    'exposed_headers' => [
-        'Authorization',
-        'X-CSRF-TOKEN',
-        'X-XSRF-TOKEN',
-    ],
-    
-    'max_age' => 60 * 60 * 24, // 24 jam
-    
-    'supports_credentials' => true,
+    'allowed_headers' => ['*'],
+    'exposed_headers' => [],
+    'max_age' => 0,
+    'supports_credentials' => false,
 ];
