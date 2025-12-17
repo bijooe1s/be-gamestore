@@ -1,14 +1,10 @@
-// config/cors.php
 return [
 'paths' => ['api/*', 'sanctum/csrf-cookie'],
 'allowed_methods' => ['*'],
-'allowed_origins' => [
-env('FRONTEND_URL', 'https://gamestoredz.vercel.app'),
-'http://localhost:5173'
-],
+'allowed_origins' => [env('FRONTEND_URL', 'https://gamestoredz.vercel.app')],
 'allowed_origins_patterns' => [],
 'allowed_headers' => ['*'],
 'exposed_headers' => [],
 'max_age' => 0,
-'supports_credentials' => true,
+'supports_credentials' => false, // Bisa true jika pakai cookie auth
 ];
